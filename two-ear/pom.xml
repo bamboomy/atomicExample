@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>be.bamboomy.test</groupId>
+	<artifactId>two-ear</artifactId>
+	<packaging>ear</packaging>
+	<version>1.0.3-SNAPSHOT</version>
+	<name>two EAR</name>
+	
+	<!-- 
+	
+	This build should fail if executed on its own, but should succeed if either:
+		-> /pom.xml
+		or 
+		-> /one-ear-build/pom.xml
+		
+		are executed
+		
+	-->
+	
+	<dependencies>
+
+		<dependency>
+			<groupId>be.bamboomy.test</groupId>
+			<artifactId>globalEJB-jar</artifactId>
+			<version>1.0.3-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>be.bamboomy.test</groupId>
+			<artifactId>two-war</artifactId>
+			<version>1.0.3-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+
+	</dependencies>
+	
+	<!-- 
+		The parent property is not recognized, the build does fail but doesn't succeed if  
+		
+		-> /pom.xml
+		or 
+		-> /one-ear-build/pom.xml
+		
+		are executed.
+	-->
+
+	<build>
+		<plugins>
+				<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>1.4.1</version>
+				<executions>
+					<execution>
+						<id>enforce-property</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireProperty>
+									<property>parent</property>
+									<message>==> This project can't be build separately!!! -> Please build either the root or one of the "...-build" maven projects...</message>
+									<regex>.*</regex>
+								</requireProperty>
+							</rules>
+							<fail>true</fail>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

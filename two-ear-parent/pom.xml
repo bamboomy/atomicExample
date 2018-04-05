@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>be.bamboomy.test</groupId>
+	<artifactId>two-ear-parent</artifactId>
+	<version>1.0.3-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>two EAR PARENT</name>
+	
+	<!-- 
+	This build should succeed
+	(and the submodules should succeed as well)
+	-->
+
+	<properties>
+		<parent>two</parent> <!-- trying with the property 'parent' (doesn't work) (doesn't get recognized by the maven-enforcer-plugin) -->
+	</properties>
+
+	<modules>
+		<module>../globalEJB-jar</module>
+		<module>../two-war</module>
+		<module>../two-ear</module>
+	</modules>
+
+</project>
+	

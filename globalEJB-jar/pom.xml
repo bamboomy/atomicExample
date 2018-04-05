@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>be.bamboomy.test</groupId>
+	<artifactId>globalEJB-jar</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0.3-SNAPSHOT</version>
+	<name>Global EJB</name>
+	
+	<!-- This build should (ideally) be possible independently -->
+	<!-- If not it's not that bad... -->
+
+</project>
