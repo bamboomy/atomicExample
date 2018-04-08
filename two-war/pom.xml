@@ -11,12 +11,7 @@
 	
 	<!-- 
 	
-	This build should fail if executed on its own but should succeed if either:
-		-> /pom.xml
-		or 
-		-> /two-ear-build/pom.xml
-		
-		are executed
+	This build should fail if executed on its own but should succeed if the parent pom is executed
 		
 	-->
 
@@ -31,13 +26,7 @@
 	</dependencies>
 	
 	<!-- 
-		The parent property is not recognized, the build does fail but doesn't succeed if  
-		
-		-> /pom.xml
-		or 
-		-> /one-ear-build/pom.xml
-		
-		are executed.
+		The parent property is not recognized, the build does fail but doesn't succeed if  the parent pom is executed.
 	-->
 
 	<build>

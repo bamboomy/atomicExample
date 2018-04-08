@@ -8,6 +8,10 @@
 	<version>1.0.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Example PARENT</name>
+	
+	<properties>
+		<parent>root</parent> <!-- trying with the property 'parent' (doesn't work) (doesn't get recognized by the maven-enforcer-plugin) -->
+	</properties>
 
 	<modules>
 		<module>globalEJB-jar</module>

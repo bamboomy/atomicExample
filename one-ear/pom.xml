@@ -11,12 +11,7 @@
 	
 	<!-- 
 	
-	This build should fail if executed on its own but should succeed if either:
-		-> /pom.xml
-		or 
-		-> /one-ear-build/pom.xml
-		
-		is executed
+	This build should fail if executed on its own but should succeed if the parent pom is executed
 		
 	-->
 	
